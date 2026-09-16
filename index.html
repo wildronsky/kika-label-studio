@@ -1,1 +1,47 @@
-<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><title>KIKA Label Studio — V5.2</title><style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#fff}iframe{width:100%;height:100%;border:0;display:block}</style></head><body><iframe id="app" src="v5.1.html" title="KIKA Label Studio"></iframe><script>const f=document.getElementById('app');f.addEventListener('load',()=>{try{const d=f.contentDocument||f.contentWindow.document;const h=d.querySelector('.header');const wa=h&&h.querySelector('.waHeader');if(wa){const x=d.createElement('a');x.className='socialHeader';x.href='https://www.instagram.com/kika.fattoamano/';x.target='_blank';x.rel='noopener noreferrer';x.setAttribute('aria-label','Seguici su Instagram @kika.fattoamano');x.innerHTML='<div style="font-size:28px;line-height:1;font-weight:900">◎</div><div style="font-size:12px;line-height:1.05;font-weight:950">SEGUICI SU<br>INSTAGRAM</div><strong style="font-size:14px">@kika.fattoamano</strong><small style="font-size:9px;color:#686868">Idee, creazioni e novità 💗</small>';x.style.cssText='background:#fff0f7;border-radius:18px;padding:12px 16px;text-align:center;min-width:180px;display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;color:inherit';wa.replaceWith(x)}const styles=d.createElement('style');styles.textContent='.header{overflow:hidden}.socialHeader{box-shadow:none}.socialHeader strong{display:block}.waHeader{display:none!important}';d.head.appendChild(styles);const sub=[...d.querySelectorAll('.step')].find(e=>e.dataset.step==='5')?.querySelector('.subtitle');if(sub)sub.textContent='Scrivi il nome che vuoi stampare sull’etichetta.';d.title='KIKA Label Studio — V5.2';}catch(e){console.error(e)}});</script></body></html>
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<title>KIKA Label Studio — V5.3</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#fff}
+iframe{width:100%;height:100%;border:0;display:block}
+</style>
+</head>
+<body>
+<iframe id="app" src="v5.1.html?v=53" title="KIKA Label Studio"></iframe>
+<script>
+const frame=document.getElementById('app');
+function patch(){
+ try{
+  const d=frame.contentDocument||frame.contentWindow.document;
+  if(!d||!d.head)return;
+  const h=d.querySelector('.header');
+  if(h){
+   const wa=h.querySelector('.waHeader');
+   if(wa){
+    const x=d.createElement('a');
+    x.className='socialHeader';
+    x.href='https://www.instagram.com/kika.fattoamano/';
+    x.target='_blank';
+    x.rel='noopener noreferrer';
+    x.setAttribute('aria-label','Seguici su Instagram @kika.fattoamano');
+    x.innerHTML='<div style="font-size:28px;line-height:1;font-weight:900">◎</div><div style="font-size:12px;line-height:1.05;font-weight:950">SEGUICI SU<br>INSTAGRAM</div><strong style="font-size:14px">@kika.fattoamano</strong><small style="font-size:9px;color:#686868">Idee, creazioni e novità 💗</small>';
+    x.style.cssText='background:#fff0f7;border-radius:18px;padding:12px 16px;text-align:center;min-width:180px;display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;color:inherit;box-sizing:border-box';
+    wa.replaceWith(x);
+   }
+  }
+  const s=d.createElement('style');
+  s.textContent='.waHeader{display:none!important}.socialHeader{cursor:pointer}.socialHeader:hover{transform:translateY(-1px)}';
+  d.head.appendChild(s);
+  d.title='KIKA Label Studio — V5.3';
+ }catch(e){console.log('KIKA patch:',e)}
+}
+frame.addEventListener('load',patch);
+setTimeout(patch,500);
+setTimeout(patch,1500);
+</script>
+</body>
+</html>
